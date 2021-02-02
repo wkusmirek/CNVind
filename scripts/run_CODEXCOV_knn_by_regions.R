@@ -1,5 +1,3 @@
-##  docker run --rm -v /data/work/home/iwkusmirek/cluster-regions:/data/work/home/iwkusmirek/cluster-regions -v /tmp:/tmp -w /data/work/home/iwkusmirek/cluster-regions biodatageeks/cnv-opt-codexcov Rscript -e "library('CODEXCOV');source('/data/work/home/iwkusmirek/cluster-regions/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1, 3, 200, 100, 1, '11_cov_NA_qc.csv', '20130108.exome.targets.chr11.qc.bed', '/tmp/usun_1')"
-
 run_CODEXCOV <- function(K_from,
                          K_to,
                          lmax,

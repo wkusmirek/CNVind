@@ -1,5 +1,3 @@
-#docker run --rm -it -v /home/wkusmire/CNV-regression:/home/wkusmire/CNV-regression -w /home/wkusmire/CNV-regression/src biodatageeks/cnv-opt-codexcov Rscript -e "library('CODEXCOV');source('/home/wkusmire/CNV-regression/src/run_CODEXCOV_from_Yhat.R');run_CODEXCOV(1, 3, 200, '/home/wkusmire/CNV-regression/data/1_cov_NA.csv', '/home/wkusmire/CNV-regression/data/1_cov_NA_mod.csv', '/home/wkusmire/CNV-regression/data/20130108.exome.targets.chr1.bed', '/home/wkusmire/CNV-regression/data/reference_sample_set_kmeans_1.csv', 'calls_mod.csv')"
-
 segment_without_K <- function(Y_qc, Yhat, sampname_qc, ref_qc, chr, lmax, mode) {
     finalcall <- matrix(ncol = 9)
     lmax <- lmax - 1
