@@ -21,6 +21,7 @@ The CODEX-KNN tool is composed of several steps, below we've got step-by-step in
 cd CODEX-KNN
 cp dataset/* /tmp
 cp scripts/* /tmp
+cd /tmp
 ```
 
 ### Quality control
