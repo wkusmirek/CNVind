@@ -1,6 +1,6 @@
-# CODEX-KNN
+# CNVind
 
-CODEX-KNN is the new pipeline for calling CNVs based on the CODEX tool, where the normalization process is conducted separately for each of the sequencing regions. Independent normalization allows to significantly improve the results of rare CNVs detection. For example, for investigated dataset we reduced the number of false positives calls from over 15,000 to around 5,000 while maintaining a constant number of true positive calls equal to about 150 CNVs. However, independent normalization of each sequencing region is a computationally expensive process, therefore our pipeline is customized and can be easily run in the cloud computing environment, on the computer cluster or on the single CPU server. 
+CNVind is the new pipeline for calling CNVs based on the WES data, where the normalization process is conducted separately for each of the sequencing regions. Independent normalization allows to significantly improve the results of rare CNVs detection. Independent normalization of each sequencing region is a computationally expensive process, therefore our pipeline is customized and can be easily run in the cloud computing environment, on the computer cluster or on the single CPU server. 
 
 ## Getting Started
 
@@ -16,9 +16,9 @@ Docker
 
 ## Running the tests
 
-The CODEX-KNN tool is composed of several steps, below we've got step-by-step instructions how to run the application. Before starting the tests below, please copy the contents of the dataset and scripts directories to the /tmp directory.
+The CNVind tool is composed of several steps, below we've got step-by-step instructions how to run the application. Before starting the tests below, please copy the contents of the dataset and scripts directories to the /tmp directory.
 ```
-cd CODEX-KNN
+cd CNVind
 cp dataset/* /tmp
 cp scripts/* /tmp
 cd /tmp
@@ -26,7 +26,7 @@ cd /tmp
 
 ### Quality control
 
-The first step of the CODEX-KNN pipeline is quality control. In this process all sequencing regions (I) with GC content below 20% or greater than 80%, (II) with mappability factor below 0.9, (III) with median read depth across all samples below 20 or greater than 4000 and (IV) shorter than 20 bp or longer than 2000 bp are removed. 
+The first step of the CNVind pipeline is quality control. In this process all sequencing regions (I) with GC content below 20% or greater than 80%, (II) with mappability factor below 0.9, (III) with median read depth across all samples below 20 or greater than 4000 and (IV) shorter than 20 bp or longer than 2000 bp are removed. 
 
 ```
 docker run --rm -v /tmp:/tmp -w /tmp biodatageeks/cnv-opt-target-qc Rscript -e "library('TARGET.QC');run_TARGET.QC(0.9,20,4000,20,2000,20,80,'/tmp/raw_cov.csv','/tmp/raw_cov_qc.csv','/tmp/exons_coordinates.bed','/tmp/exons_coordinates_qc.bed')"
