@@ -1,0 +1,1149 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-1
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,1,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_1.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-2
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,2,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_2.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-3
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,3,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_3.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-4
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,4,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_4.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-5
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,5,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_5.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-6
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,6,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_6.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-7
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,7,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_7.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-8
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,8,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_8.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-9
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,9,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_9.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-10
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,10,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_10.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-11
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,11,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_11.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-12
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,12,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_12.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-13
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,13,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_13.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-14
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,14,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_14.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-15
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,15,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_15.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-16
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,16,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_16.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-17
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,17,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_17.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-18
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,18,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_18.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-19
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,19,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_19.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-20
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,20,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_20.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-21
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,21,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_21.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-22
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,22,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_22.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-23
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,23,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_23.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-24
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,24,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_24.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-25
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,25,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_25.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-26
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,26,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_26.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-27
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,27,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_27.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-28
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,28,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_28.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-29
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,29,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_29.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-30
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,30,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_30.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-31
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,31,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_31.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-32
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,32,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_32.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-33
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,33,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_33.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-34
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,34,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_34.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-35
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,35,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_35.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-36
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,36,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_36.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-37
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,37,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_37.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-38
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,38,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_38.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-39
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,39,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_39.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-40
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,40,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_40.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-41
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,41,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_41.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-42
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,42,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_42.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-43
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,43,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_43.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-44
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,44,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_44.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-45
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,45,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_45.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-46
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,46,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_46.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-47
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,47,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_47.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-48
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,48,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_48.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-49
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,49,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_49.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normalization-50
+spec:
+  template:
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: my-azurefile
+      containers:
+      - name: cnvind-normalization
+        image: wkusmirek/cnvind-normalization
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: task-pv-storage
+        command: ["Rscript",  "-e", "library('CODEXCOV');source('/opt/run_CODEXCOV_knn_by_regions.R');run_CODEXCOV(1,3,200,30,50,'/tmp/raw_cov_qc.csv','/tmp/exons_coordinates_qc.bed','/tmp/norm_cov_qc_50.csv')"]
+        resources:
+          requests:
+            cpu: 1
+      restartPolicy: Never
