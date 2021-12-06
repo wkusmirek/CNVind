@@ -100,9 +100,9 @@ kubectl cluster-info
 kubectl describe nodes
 ```
 
-Next, go to the single-node directory of repo:
+Next, go to the minikube directory of repo:
 ```
-cd CNVind/kubernetes/single-node/
+cd CNVind/kubernetes/minikube/
 ```
 
 Then, you have to create Persistent Volume:
