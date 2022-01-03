@@ -1,0 +1,24 @@
+{
+    "id": "/subscriptions/resourcegroups/test/providers/Microsoft.ContainerService/managedClusters/CNVind/agentPools/agentpool",
+    "name": "agentpool",
+    "type": "Microsoft.ContainerService/managedClusters/agentPools",
+    "properties": {
+        "count": 1,
+        "vmSize": "Standard_DS2_v2",
+        "osDiskSizeGB": 128,
+        "osDiskType": "Managed",
+        "maxPods": 110,
+        "type": "VirtualMachineScaleSets",
+        "maxCount": 6,
+        "minCount": 4,
+        "enableAutoScaling": true,
+        "provisioningState": "Succeeded",
+        "powerState": {
+            "code": "Running"
+        },
+        "orchestratorVersion": "1.20.9",
+        "mode": "System",
+        "osType": "Linux",
+        "nodeImageVersion": "AKSUbuntu-1804gen2containerd-2021.11.06"
+    }
+}

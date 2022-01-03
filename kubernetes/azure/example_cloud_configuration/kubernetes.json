@@ -1,0 +1,120 @@
+{
+    "id": "/subscriptions/resourcegroups/test/providers/Microsoft.ContainerService/managedClusters/CNVind",
+    "location": "switzerlandnorth",
+    "name": "CNVind",
+    "type": "Microsoft.ContainerService/ManagedClusters",
+    "properties": {
+        "provisioningState": "Succeeded",
+        "powerState": {
+            "code": "Running"
+        },
+        "kubernetesVersion": "1.20.9",
+        "dnsPrefix": "CNVind-dns",
+        "fqdn": "cnvind-dns-2d8e565d.hcp.switzerlandnorth.azmk8s.io",
+        "agentPoolProfiles": [
+            {
+                "name": "agentpool",
+                "count": 1,
+                "vmSize": "Standard_DS2_v2",
+                "osDiskSizeGB": 128,
+                "osDiskType": "Managed",
+                "maxPods": 110,
+                "type": "VirtualMachineScaleSets",
+                "maxCount": 6,
+                "minCount": 4,
+                "enableAutoScaling": true,
+                "provisioningState": "Succeeded",
+                "powerState": {
+                    "code": "Running"
+                },
+                "orchestratorVersion": "1.20.9",
+                "mode": "System",
+                "osType": "Linux",
+                "nodeImageVersion": "AKSUbuntu-1804gen2containerd-2021.11.06"
+            }
+        ],
+        "servicePrincipalProfile": {
+            "clientId": "msi"
+        },
+        "addonProfiles": {
+            "azurepolicy": {
+                "enabled": false,
+                "config": null
+            },
+            "httpApplicationRouting": {
+                "enabled": false,
+                "config": null
+            },
+            "omsAgent": {
+                "enabled": true,
+                "config": {
+                    "logAnalyticsWorkspaceResourceID": "/subscriptions/resourceGroups/DefaultResourceGroup-CHN/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-8260e0da-941c-41dc-a161-365edb53c575-CHN"
+                },
+                "identity": {
+                    "resourceId": "/subscriptions/resourcegroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.ManagedIdentity/userAssignedIdentities/omsagent-cnvind",
+                    "clientId": "5f79ae4b-c153-4d25-ba69-3ddc8ec844f0",
+                    "objectId": "b3cf6aca-cb4f-41ed-b248-1f9c664119e2"
+                }
+            }
+        },
+        "nodeResourceGroup": "MC_test_CNVind_switzerlandnorth",
+        "enableRBAC": true,
+        "networkProfile": {
+            "networkPlugin": "kubenet",
+            "loadBalancerSku": "Standard",
+            "loadBalancerProfile": {
+                "managedOutboundIPs": {
+                    "count": 1
+                },
+                "effectiveOutboundIPs": [
+                    {
+                        "id": "/subscriptions/resourceGroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.Network/publicIPAddresses/6e5514e0-d3d2-4759-91b6-920de22e0b26"
+                    }
+                ]
+            },
+            "podCidr": "10.244.0.0/16",
+            "serviceCidr": "10.0.0.0/16",
+            "dnsServiceIP": "10.0.0.10",
+            "dockerBridgeCidr": "172.17.0.1/16",
+            "outboundType": "loadBalancer"
+        },
+        "maxAgentPools": 100,
+        "apiServerAccessProfile": {
+            "enablePrivateCluster": false
+        },
+        "identityProfile": {
+            "kubeletidentity": {
+                "resourceId": "/subscriptions/resourcegroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.ManagedIdentity/userAssignedIdentities/CNVind-agentpool",
+                "clientId": "4b7e5da2-7cea-49b2-9600-1c706e624d48",
+                "objectId": "d92e6b0e-d822-4023-b113-dc84b1494f46"
+            }
+        },
+        "autoScalerProfile": {
+            "balance-similar-node-groups": "false",
+            "expander": "random",
+            "max-empty-bulk-delete": "10",
+            "max-graceful-termination-sec": "600",
+            "max-total-unready-percentage": "45",
+            "new-pod-scale-up-delay": "0s",
+            "ok-total-unready-count": "3",
+            "scale-down-delay-after-add": "10m",
+            "scale-down-delay-after-delete": "10s",
+            "scale-down-delay-after-failure": "3m",
+            "scale-down-unneeded-time": "10m",
+            "scale-down-unready-time": "20m",
+            "scale-down-utilization-threshold": "0.5",
+            "scan-interval": "10s",
+            "skip-nodes-with-local-storage": "false",
+            "skip-nodes-with-system-pods": "true"
+        }
+    },
+    "identity": {
+        "type": "SystemAssigned",
+        "principalId": "6b970dc3-b04c-4d89-9ef8-bd9109c661cf",
+        "tenantId": "3b50229c-cd78-4588-9bcf-97b7629e2f0f"
+    },
+    "sku": {
+        "name": "Basic",
+        "tier": "Free"
+    }
+}

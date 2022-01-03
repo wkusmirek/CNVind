@@ -1,0 +1,64 @@
+{
+    "name": "kubernetes",
+    "id": "/subscriptions/resourceGroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.Network/loadBalancers/kubernetes",
+    "etag": "W/\"2fc4af9e-83ef-46e9-b112-7d8ad5c075ba\"",
+    "type": "Microsoft.Network/loadBalancers",
+    "location": "switzerlandnorth",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "99546798-44e5-45c8-8028-bfd372bd3f5b",
+        "frontendIPConfigurations": [
+            {
+                "name": "6e5514e0-d3d2-4759-91b6-920de22e0b26",
+                "id": "/subscriptions/resourceGroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.Network/loadBalancers/kubernetes/frontendIPConfigurations/6e5514e0-d3d2-4759-91b6-920de22e0b26",
+                "etag": "W/\"2fc4af9e-83ef-46e9-b112-7d8ad5c075ba\"",
+                "type": "Microsoft.Network/loadBalancers/frontendIPConfigurations",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "privateIPAllocationMethod": "Dynamic",
+                    "publicIPAddress": {
+                        "id": "/subscriptions/resourceGroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.Network/publicIPAddresses/6e5514e0-d3d2-4759-91b6-920de22e0b26"
+                    }
+                }
+            }
+        ],
+        "backendAddressPools": [
+            {
+                "name": "aksOutboundBackendPool",
+                "id": "/subscriptions/resourceGroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.Network/loadBalancers/kubernetes/backendAddressPools/aksOutboundBackendPool",
+                "etag": "W/\"2fc4af9e-83ef-46e9-b112-7d8ad5c075ba\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "backendIPConfigurations": [
+                        {
+                            "id": "/subscriptions/resourceGroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.Compute/virtualMachineScaleSets/aks-agentpool-17503143-vmss/virtualMachines/0/networkInterfaces/aks-agentpool-17503143-vmss/ipConfigurations/ipconfig1"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/loadBalancers/backendAddressPools"
+            },
+            {
+                "name": "kubernetes",
+                "id": "/subscriptions/resourceGroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.Network/loadBalancers/kubernetes/backendAddressPools/kubernetes",
+                "etag": "W/\"2fc4af9e-83ef-46e9-b112-7d8ad5c075ba\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "backendIPConfigurations": [
+                        {
+                            "id": "/subscriptions/resourceGroups/MC_test_CNVind_switzerlandnorth/providers/Microsoft.Compute/virtualMachineScaleSets/aks-agentpool-17503143-vmss/virtualMachines/0/networkInterfaces/aks-agentpool-17503143-vmss/ipConfigurations/ipconfig1"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/loadBalancers/backendAddressPools"
+            }
+        ],
+        "loadBalancingRules": [],
+        "probes": [],
+        "inboundNatRules": [],
+        "inboundNatPools": []
+    },
+    "sku": {
+        "name": "Standard"
+    }
+}

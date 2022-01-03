@@ -1,0 +1,49 @@
+{
+    "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+    },
+    "kind": "StorageV2",
+    "id": "/subscriptions/resourceGroups/mc_test_cnvind_switzerlandnorth/providers/Microsoft.Storage/storageAccounts/ff2e9eb9395b74438968bb4",
+    "name": "ff2e9eb9395b74438968bb4",
+    "type": "Microsoft.Storage/storageAccounts",
+    "location": "switzerlandnorth",
+    "tags": {
+        "created-by": "azure"
+    },
+    "properties": {
+        "networkAcls": {
+            "bypass": "AzureServices",
+            "virtualNetworkRules": [],
+            "ipRules": [],
+            "defaultAction": "Allow"
+        },
+        "supportsHttpsTrafficOnly": true,
+        "encryption": {
+            "services": {
+                "file": {
+                    "enabled": true,
+                    "lastEnabledTime": "2021-12-06T11:12:49.2052503Z"
+                },
+                "blob": {
+                    "enabled": true,
+                    "lastEnabledTime": "2021-12-06T11:12:49.2052503Z"
+                }
+            },
+            "keySource": "Microsoft.Storage"
+        },
+        "accessTier": "Hot",
+        "provisioningState": "Succeeded",
+        "creationTime": "2021-12-06T11:12:49.1427187Z",
+        "primaryEndpoints": {
+            "dfs": "https://ff2e9eb9395b74438968bb4.dfs.core.windows.net/",
+            "web": "https://ff2e9eb9395b74438968bb4.z1.web.core.windows.net/",
+            "blob": "https://ff2e9eb9395b74438968bb4.blob.core.windows.net/",
+            "queue": "https://ff2e9eb9395b74438968bb4.queue.core.windows.net/",
+            "table": "https://ff2e9eb9395b74438968bb4.table.core.windows.net/",
+            "file": "https://ff2e9eb9395b74438968bb4.file.core.windows.net/"
+        },
+        "primaryLocation": "switzerlandnorth",
+        "statusOfPrimary": "available"
+    }
+}
